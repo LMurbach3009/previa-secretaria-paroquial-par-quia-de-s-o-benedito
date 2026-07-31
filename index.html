@@ -3,210 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paróquia de São Benedito - Paz e Fé</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --primary-glow: #eab308;
-            --secondary-glow: #f59e0b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --card-bg: rgba(30, 41, 59, 0.6);
-            --card-border: rgba(255, 255, 255, 0.1);
+    <title>Paróquia de São Benedito</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cabinet Grotesk', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#f59e0b',
+                        }
+                    }
+                }
+            }
         }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 15% 50%, rgba(234, 179, 8, 0.15), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(245, 158, 11, 0.15), transparent 25%);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 8rem 0 4rem;
-            text-align: center;
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: rgba(234, 179, 8, 0.1);
-            color: var(--primary-glow);
-            border: 1px solid rgba(234, 179, 8, 0.2);
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            animation: fadeInDown 0.8s ease-out;
-        }
-
-        h1 {
-            font-size: clamp(3rem, 5vw, 5rem);
-            font-weight: 700;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff 0%, #fef3c7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            animation: fadeInUp 0.8s ease-out 0.4s backwards;
-        }
-
-        /* Glassmorphism Cards */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem 0;
-        }
-
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 2.5rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            animation: fadeInUp 0.8s ease-out 0.6s backwards;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(234, 179, 8, 0.3);
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5), 
-                        0 0 20px rgba(234, 179, 8, 0.1);
-        }
-
-        .icon-wrapper {
-            width: 48px;
-            height: 48px;
-            background: linear-gradient(135deg, rgba(234, 179, 8, 0.2), rgba(245, 158, 11, 0.2));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: var(--primary-glow);
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #fff;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            line-height: 1.6;
-        }
-
-        .contact-info {
-            margin-top: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            color: var(--text-main);
-        }
-        
-        .contact-item svg {
-            color: var(--secondary-glow);
-        }
-
-        footer {
-            text-align: center;
-            padding: 4rem 0 2rem;
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            border-top: 1px solid var(--card-border);
-            margin-top: 4rem;
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-    </style>
+    </script>
+    <!-- Fontshare & Google Fonts -->
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@800,700,500,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <header class="hero">
-            <div class="badge">Instituição Religiosa</div>
-            <h1>Paróquia de São Benedito</h1>
-            <p>Tradição, acolhimento e amor ao próximo. Descubra como nossa paróquia atua no coração da cidade.</p>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased min-h-screen selection:bg-brand-gold selection:text-zinc-900">
+
+    <main class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+        <!-- Hero Section -->
+        <header class="mb-24 text-center max-w-3xl mx-auto">
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight mb-8">
+                Paz & <br/><span class="text-brand-gold">Acolhimento.</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-zinc-400 font-medium max-w-2xl mx-auto leading-relaxed">
+                A Paróquia de São Benedito é um espaço de tradição, amor ao próximo e encontro com a comunidade.
+            </p>
         </header>
 
-        <main class="grid">
-            <div class="card">
-                <div class="icon-wrapper">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <h3>Secretaria</h3>
-                <p>Nossa equipe da secretaria está pronta para esclarecer dúvidas sobre os sacramentos, horários de missas e campanhas da igreja.</p>
-            </div>
-
-            <div class="card">
-                <div class="icon-wrapper">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                </div>
-                <h3>Fale Conosco</h3>
-                <p>Venha nos fazer uma visita ou entre em contato pelos nossos canais de atendimento:</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        Largo São Benedito, 59
-                    </div>
-                    <div class="contact-item">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                        +55 19 3441 9205
-                    </div>
-                    <div class="contact-item">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                        psbenedito@bol.com.br
-                    </div>
+        <!-- Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Main visual cell (span 2) -->
+            <div class="md:col-span-2 h-96 relative rounded-2xl overflow-hidden bg-zinc-900 border border-zinc-800">
+                <img src="https://picsum.photos/seed/sao-benedito/1200/800" alt="Igreja" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity grayscale hover:grayscale-0 transition-all duration-700" />
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+                <div class="absolute bottom-8 left-8">
+                    <p class="font-mono text-xs uppercase tracking-[0.2em] text-brand-gold mb-2">Comunidade Viva</p>
+                    <h3 class="text-2xl font-bold">Venha participar<br/>da nossa história</h3>
                 </div>
             </div>
-        </main>
 
-        <footer>
-            <p>Prévia conceitual desenvolvida por Lucas Murbach de Oiveira (19971318109).</p>
-            <p style="opacity: 0.5; margin-top: 0.5rem;">Não é um site oficial.</p>
-        </footer>
-    </div>
+            <!-- Contacts cell -->
+            <div class="rounded-2xl bg-zinc-900 border border-zinc-800 p-8 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Atendimento</h3>
+                    <ul class="space-y-6">
+                        <li>
+                            <p class="font-mono text-xs text-zinc-500 mb-1 uppercase tracking-widest">Endereço</p>
+                            <p class="text-zinc-300">Largo São Benedito, 59</p>
+                        </li>
+                        <li>
+                            <p class="font-mono text-xs text-zinc-500 mb-1 uppercase tracking-widest">Telefone</p>
+                            <p class="text-zinc-300">+55 19 3441 9205</p>
+                        </li>
+                        <li>
+                            <p class="font-mono text-xs text-zinc-500 mb-1 uppercase tracking-widest">E-mail</p>
+                            <p class="text-zinc-300">psbenedito@bol.com.br</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="mt-24 pt-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center text-sm font-mono text-zinc-500">
+            <p>Lucas Murbach de Oiveira</p>
+            <p>Demonstração conceitual</p>
+        </div>
+    </main>
+
 </body>
 </html>
