@@ -82,5 +82,19 @@
         </div>
     </main>
 
+    <!-- Contact Bar -->
+    <div id="contact-bar" class="fixed bottom-0 left-0 w-full p-4 text-center bg-gradient-to-t from-lime-500/90 to-lime-500/40 backdrop-blur-md transform translate-y-full transition-transform duration-500 z-50">
+        <p class="text-black font-medium">Para mais informações entre em contato: Lucas Murbach (19) 971318109</p>
+    </div>
+    <script>
+        window.addEventListener('scroll', () => {
+            const bar = document.getElementById('contact-bar');
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+                bar.classList.remove('translate-y-full');
+            } else {
+                bar.classList.add('translate-y-full');
+            }
+        });
+    </script>
 </body>
 </html>
